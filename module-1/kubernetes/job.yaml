@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: test-app-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: test-app-container
+        image: ghcr.io/akashsara/test-app:latest
+      restartPolicy: Never
+  backoffLimit: 4
